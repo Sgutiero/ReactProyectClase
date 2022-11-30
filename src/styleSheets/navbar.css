@@ -1,0 +1,87 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 8vh;
+  background: rgb(91, 55, 136);
+}
+.nav_marca {
+  text-transform: uppercase;
+}
+
+.nav_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+}
+.nav_cambio {
+  display: none;
+}
+.nav_cambio div {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: rgb(255, 255, 255);
+  transition: 0.3s ease-in;
+}
+
+.nav_item:hover{
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 768px) {
+  .nav_cambio {
+    display: block;
+    cursor: pointer;
+  }
+  .nav_menu {
+    position: fixed;
+    top: 7vh;
+    right: 0;
+    height: 93vh;
+    width: 40vw;
+    background: rgb(91, 55, 136);
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: 0.6s ease-in;
+  }
+}
+/* Active Class */
+.nav_active {
+  transform: translateX(0%);
+}
+
+/* Toggle Icon Animation */
+
+.rotar .linea1 {
+  transform: rotate(-45deg) translate(-4px, 5px);
+}
+.rotar .linea2 {
+  opacity: 0;
+}
+.rotar .linea3 {
+  transform: rotate(45deg) translate(-4px, -5px);
+}
